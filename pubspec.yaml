@@ -24,9 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.1
+  flutter_icons: ^1.1.0
   google_fonts: ^1.1.1
   responsive_framework: ^0.0.14
-  velocity_x: ^1.0.1
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:
