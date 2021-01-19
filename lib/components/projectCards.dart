@@ -16,7 +16,7 @@ class ProjectCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: Color.fromRGBO(255, 97, 84, 1),
+      shadowColor: Color.fromRGBO(255, 97, 84, 0.8),
       elevation: 20,
       child: Center(
           child: Padding(

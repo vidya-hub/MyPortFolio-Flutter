@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/components/projectCards.dart';
+import 'package:myportfolio/navbar/navbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -53,6 +54,14 @@ class MyApp extends StatelessWidget {
       "title": "HLS Video downloader Api",
       "subtitle": "Download the HLS type videos from m3u8s type urls",
     },
+    {
+      "title": "HLS Video downloader Api",
+      "subtitle": "Download the HLS type videos from m3u8s type urls",
+    },
+    {
+      "title": "HLS Video downloader Api",
+      "subtitle": "Download the HLS type videos from m3u8s type urls",
+    },
   ];
   Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
@@ -79,49 +88,7 @@ class MyApp extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: pWidth * 0.07,
-                ),
-                Text(
-                  "VidyaSagar",
-                  style: GoogleFonts.caveat(fontSize: 40.0),
-                ),
-                SizedBox(
-                  width: pWidth * 0.6,
-                ),
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        _launchInBrowser("https://github.com/vidya-hub");
-                      },
-                      child: Text(
-                        "Github",
-                        style: GoogleFonts.caveat(fontSize: 40.0),
-                      ),
-                    ),
-                    SizedBox(
-                      width: pWidth * 0.01,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        _launchInBrowser(
-                            "https://www.linkedin.com/in/vidya-sagar-129b17130/");
-                      },
-                      child: Text(
-                        "LinkedIn",
-                        style: GoogleFonts.caveat(
-                            fontSize: 40.0,
-                            color: Color.fromRGBO(255, 97, 84, 0.8)),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            DesktopNavBar(pWidth: pWidth),
             SizedBox(
               height: pHeight * 0.1,
             ),
@@ -162,7 +129,6 @@ class MyApp extends StatelessWidget {
               ],
             ),
             Stack(
-              fit: StackFit.loose,
               children: [
                 Container(
                   width: pWidth,
@@ -225,233 +191,229 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       height: pHeight * 0.54,
                       width: pWidth * 0.9,
-                      child: Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.04, top: pHeight * 0.08),
-                                  child: Image.asset(
-                                    "images/pencil.png",
-                                    height: pHeight * 0.1,
-                                    width: pWidth * 0.1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.04, top: pHeight * 0.08),
+                                child: Image.asset(
+                                  "images/pencil.png",
+                                  height: pHeight * 0.1,
+                                  width: pWidth * 0.1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.03, top: pHeight * 0.01),
+                                child: Text(
+                                  "   UI/UX\nDESIGNER",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 97, 84, 0.8),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.03, top: pHeight * 0.01),
-                                  child: Text(
-                                    "   UI/UX\nDESIGNER",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 97, 84, 0.8),
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.05, top: pHeight * 0.01),
+                                child: Text(
+                                  "       I value simple content structure,\nclean design patterns, and thoughtful interactions.",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.05, top: pHeight * 0.01),
-                                  child: Text(
-                                    "       I value simple content structure,\nclean design patterns, and thoughtful interactions.",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.03, top: pHeight * 0.01),
+                                child: Text(
+                                  "   Things I enjoy designing",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 97, 84, 0.8),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.03, top: pHeight * 0.01),
-                                  child: Text(
-                                    "   Things I enjoy designing",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 97, 84, 0.8),
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.02, top: pHeight * 0.01),
+                                child: Text(
+                                  "       UX, UI, Web, Mobile, Apps, .",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.02, top: pHeight * 0.01),
-                                  child: Text(
-                                    "       UX, UI, Web, Mobile, Apps, .",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.02, top: pHeight * 0.01),
+                                child: Text(
+                                  "   Design Tools:",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 97, 84, 0.8),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.02, top: pHeight * 0.01),
-                                  child: Text(
-                                    "   Design Tools:",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 97, 84, 0.8),
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.01, top: pHeight * 0.01),
+                                child: Text(
+                                  "       Figma",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.01, top: pHeight * 0.01),
-                                  child: Text(
-                                    "       Figma",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
-                                    ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: pWidth * 0.03,
+                          ),
+                          VerticalDivider(
+                            color: Colors.black54,
+                            thickness: 1,
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.02, top: pHeight * 0.08),
+                                child: Image.asset(
+                                  "images/codeIcon.png",
+                                  height: pHeight * 0.1,
+                                  width: pWidth * 0.1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.03, top: pHeight * 0.01),
+                                child: Text(
+                                  "   Front-end and Back-end  \n          Developer",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 97, 84, 0.8),
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: pWidth * 0.03,
-                            ),
-                            VerticalDivider(
-                              color: Colors.black54,
-                              thickness: 1,
-                            ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.02, top: pHeight * 0.08),
-                                  child: Image.asset(
-                                    "images/codeIcon.png",
-                                    height: pHeight * 0.1,
-                                    width: pWidth * 0.1,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.05, top: pHeight * 0.01),
+                                child: Text(
+                                  "       I like to code things from scratch\nand enjoy bringing ideas to life in mobile apps",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.03, top: pHeight * 0.01),
-                                  child: Text(
-                                    "   Front-end and Back-end  \n          Developer",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 97, 84, 0.8),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.05, top: pHeight * 0.01),
-                                  child: Text(
-                                    "       I like to code things from scratch\nand enjoy bringing ideas to life in mobile apps",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
-                                    ),
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: pWidth * 0.03,
-                                              top: pHeight * 0.01),
-                                          child: Text(
-                                            "   Languages I speak:",
-                                            style: GoogleFonts.novaSquare(
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color.fromRGBO(
-                                                  255, 97, 84, 0.8),
-                                            ),
+                              ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: pWidth * 0.03,
+                                            top: pHeight * 0.01),
+                                        child: Text(
+                                          "   Languages I speak:",
+                                          style: GoogleFonts.novaSquare(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromRGBO(
+                                                255, 97, 84, 0.8),
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: pWidth * 0.02,
-                                              top: pHeight * 0.01),
-                                          child: Text(
-                                            "       Python,Dart,JavaScript",
-                                            style: GoogleFonts.novaSquare(
-                                              fontSize: 15.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black87,
-                                            ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: pWidth * 0.02,
+                                            top: pHeight * 0.01),
+                                        child: Text(
+                                          "       Python,Dart,JavaScript",
+                                          style: GoogleFonts.novaSquare(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black87,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: pWidth * 0.03,
-                                              top: pHeight * 0.01),
-                                          child: Text(
-                                            "   Technologies I learned",
-                                            style: GoogleFonts.novaSquare(
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color.fromRGBO(
-                                                  255, 97, 84, 0.8),
-                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: pWidth * 0.03,
+                                            top: pHeight * 0.01),
+                                        child: Text(
+                                          "   Technologies I learned",
+                                          style: GoogleFonts.novaSquare(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromRGBO(
+                                                255, 97, 84, 0.8),
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: pWidth * 0.02,
-                                              top: pHeight * 0.01),
-                                          child: Text(
-                                            "       Flutter,GitHub,REST,Artificial Intelligence",
-                                            style: GoogleFonts.novaSquare(
-                                              fontSize: 15.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black87,
-                                            ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: pWidth * 0.02,
+                                            top: pHeight * 0.01),
+                                        child: Text(
+                                          "       Flutter,GitHub,REST,Artificial Intelligence",
+                                          style: GoogleFonts.novaSquare(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black87,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.002,
-                                      top: pHeight * 0.04),
-                                  child: Text(
-                                    "   Dev Tools:",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 97, 84, 0.8),
-                                    ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.002, top: pHeight * 0.04),
+                                child: Text(
+                                  "   Dev Tools:",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 97, 84, 0.8),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: pWidth * 0.001,
-                                      top: pHeight * 0.01),
-                                  child: Text(
-                                    "       VsCode,Github,Terminal",
-                                    style: GoogleFonts.novaSquare(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
-                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: pWidth * 0.001, top: pHeight * 0.01),
+                                child: Text(
+                                  "       VsCode,Github,Terminal",
+                                  style: GoogleFonts.novaSquare(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
                                   ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                       // alignment: Alignment.center,
                       // height: pHeight * 0.6,
@@ -478,7 +440,7 @@ class MyApp extends StatelessWidget {
                   EdgeInsets.only(left: pWidth * 0.002, top: pHeight * 0.04),
               child: Card(
                 borderOnForeground: true,
-                color: Colors.white60,
+                // color: Colors.white60,
                 elevation: 10,
                 child: Padding(
                   padding: EdgeInsets.all(pWidth * 0.01),
